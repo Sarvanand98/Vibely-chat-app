@@ -31,7 +31,7 @@ const PaymentPage = () => {
         e.preventDefault()
         paymentData({ label, type, details })
     }
-    console.log(showpaymentData, "data payments");
+    
 
 
     return (

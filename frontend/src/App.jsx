@@ -26,10 +26,9 @@ const App = () => {
   const { isLoading, authUser } = useAuthUser()
   const { theme } = useThemeStore()
 
-  // Track if we've shown the intro animation in this session
+ 
   const [introShownThisSession, setIntroShownThisSession] = useState(false)
   
-  // Check if this is the first visit ever
   const [showIntro, setShowIntro] = useState(() => {
     return !localStorage.getItem('hasVisitedBefore') && !introShownThisSession
   })
@@ -39,7 +38,7 @@ const App = () => {
       const timer = setTimeout(() => {
         setShowIntro(false)
         setIntroShownThisSession(true)
-        // Mark that user has visited before
+        
         localStorage.setItem('hasVisitedBefore', 'true')
       }, 2000)
       return () => clearTimeout(timer)
@@ -49,10 +48,10 @@ const App = () => {
   const isAuthenticated = Boolean(authUser)
   const isOnboarded = authUser?.isOnboarded
 
-  // Only show intro on first visit, never on refresh or navigation
+
   if (showIntro && !introShownThisSession) return <IntroAnimation />
   
-  // Show loader only while authenticating, not on every page change
+  
   if (isLoading && !authUser) return <PageLoader />
 
   return (

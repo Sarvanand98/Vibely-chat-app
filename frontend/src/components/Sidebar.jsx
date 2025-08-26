@@ -9,7 +9,7 @@ const Sidebar = () => {
   const currentPath = location.pathname
   const [open, setOpen] = useState(false)
 
-  // Sidebar content as a component for reuse
+
   const sidebarContent = (
     <>
       <div className="p-5 border-b border-base-300">
@@ -91,7 +91,7 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Burger icon for mobile */}
+     
       <button
         className="lg:hidden fixed top-4 left-4 z-50 bg-base-200 rounded-full p-2 shadow"
         onClick={() => setOpen(true)}
