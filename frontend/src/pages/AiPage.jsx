@@ -61,12 +61,13 @@ const AiPage = () => {
           ))}
         </div>
         <form
-          className=' flex gap-2 w-full  max-w-xl px-2 py-4 bg-base-100  left-1/2 -translate-x-1/2 rounded-2xl ml-2 sticky bottom-0'
+          className='flex gap-2 w-full max-w-xl px-2 py-2 bg-base-100 rounded-2xl sticky bottom-0'
+          style={{ boxSizing: 'border-box', left: 0, marginLeft: 0, marginRight: 0 }}
           onSubmit={handleSend}
         >
           <input
             type="text"
-            className='input input-bordered w-full'
+            className='input input-bordered flex-1 min-w-0'
             value={input}
             onChange={e => setInput(e.target.value)}
             placeholder="Type your message..."
