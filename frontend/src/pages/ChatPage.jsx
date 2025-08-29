@@ -89,7 +89,7 @@ const ChatPage = () => {
 
 
   return (
-      <div className="h-[91.2vh] ">
+      <div className="h-screen md:h-[91vh]">
       <Chat client={chatClient}>
         <Channel channel={channel}>
           <div className="w-full relative">  
